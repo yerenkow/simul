@@ -1,0 +1,32 @@
+Simul is open web-platform for making webinars.
+
+Like in many modern's software there is no security - it's fully your concern to make your webinar secure.
+This maybe not very good for "Serious Business", but it should fit for making any OpenSource webinars.
+
+Planned Features for 0.1 Version:
+
+- Any number of "rooms" via specific URL hashpart
+- Sound broadcasting from and to browser (no additional software required)
+- PDF casting (JS)
+- Two user role levels via room's security key (any user who know seckey can "promote" self to lector)
+- Only one simultaneous lector
+- Chat free-for-all
+- User list with description
+
+Technical features
+- Jquery & Jquery UI
+- w2ui for layouts
+- Recorderjs for audio capturing from lectors
+- ices + icecast2 (currently considering other options too) for audio transport
+- HTML5 for audio playback from remote stream source (muses.org)
+- pdf.js for displaying slides
+- some chat solution
+- small standardised requirements for backend
+- Java-based sample backend
+
+Workflow
+- page loads
+- from URL hash we got roomID (if it's not there - ask user to either enter it, or get right link somewhere),
+    so we can build ajax URL
+- connect to webinar room, get room state
+- periodically poll events, handle them
